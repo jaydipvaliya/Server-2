@@ -19,6 +19,12 @@ app.get("/users", (req, res) => {
   res.status(200).json(users);
 });
 
+app.get("/user/:test/:user_id", (req, res) => {
+  console.log("this is req:",req.params);
+  console.log("this is req", req);
+  res.status(200).json(users);
+});
+
 app.get("/users/:id", (req, res) => {
   const userId = Number(req.params.id);
   const user = users.find(u => u.id === userId);
